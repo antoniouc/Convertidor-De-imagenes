@@ -1,0 +1,34 @@
+{
+  "name": "convertidor-de-imagenes",
+  "version": "1.0.0",
+  "description": "Este repositorio contiene un convertidor de imágenes desarrollado en Node.js que te permite transformar imágenes de un formato a otro .",
+  "main": "index.js",
+  "scripts": {
+    "sass-user": "sass styles/sass/stylesprincipal.sass:public/css/styles.css",
+    "sass-watch": "sass --watch styles/sass:public/css",
+    "start": "npm run sass-user && nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antoniouc/Convertidor-De-imagenes.git"
+  },
+  "author": "Antonio Uc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoniouc/Convertidor-De-imagenes/issues"
+  },
+  "homepage": "https://github.com/antoniouc/Convertidor-De-imagenes#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "sass": "^1.75.0",
+    "sharp": "^0.33.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

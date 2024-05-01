@@ -1,0 +1,35 @@
+extends layout
+
+block content
+    h2 Conversor de Imágenes
+
+    form(action="#" method="post" enctype="multipart/form-data")
+        .form-group
+            label(for="imagen") Selecciona una imagen:
+            input(type="file" id="imagen" name="imagen" accept="image/png" required)
+            img(id="preview" style="max-width: 200px; max-height: 200px; margin-top: 10px; display: none;")
+        .form-group
+            label(for="formato") Formato de conversión:
+            select(id="formato" name="formato" required)
+                option(value="") Seleccione el formato
+                option(value="jpg") JPG
+                option(value="png") PNG
+                option(value="gif") GIF
+            // Agrega más opciones según los formatos que necesites
+            button(type="submit") Convertir
+
+        a#downloadLink(href="#" download) Descargar Imagen
+
+    script.
+        document.getElementById('imagen').onchange = function(e) {
+            var input = e.target;
+            var reader = new FileReader();
+            reader.onload = function(){
+                var dataURL = reader.result;
+                var preview = document.getElementById('preview');
+                preview.src = dataURL;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(input.files[0]);
+        };
+
