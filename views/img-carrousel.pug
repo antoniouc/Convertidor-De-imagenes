@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h1 IMAGENES CONVERTIDAS
+    if imagenes.length > 0
+        #image-carousel.splide
+            .splide__track 
+                ul.splide__list
+                each imagen in imagenes
+                    li.splide__slide
+                        img(src=`${imagen.imagen_convertida}`, alt='')
+    else 
+        h1 AUN NO HAY IMAGENES CONVERTIDAS
+
+
+    link(rel="stylesheet", href="/splide/css/splide.min.css")
+    script(src="/splide/js/splide.min.js")
+    script.
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#image-carousel', {
+                type: 'loop',
+                perPage: 3,
+                gap: 10,
+                pagination: false,
+                arrows: true,
+                breakpoints: {
+                    768: {
+                    perPage: 1,  // Cambiar a 1 en dispositivos móviles
+                   }
+                },  
+            }).mount();
+        });

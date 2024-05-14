@@ -35,7 +35,7 @@ nav .wrapper
 .nav-links li
   list-style: none
 
-.nav-links li a
+.nav-links li a 
   color: #f2f2f2
   text-decoration: none
   font-size: 18px
@@ -119,8 +119,11 @@ nav input
 
   h2
     margin-bottom: 20px
-
-  form
+    h5
+      width: 26%
+      margin-left: 38%
+      text-align: left
+  form, section
     display: inline-block
     text-align: left
     max-width: 400px
@@ -134,7 +137,7 @@ nav input
         font-weight: bold
 
       input[type="file"],
-      select
+      select,.form-input
         width: 100%
         padding: 12px
         font-size: 16px
@@ -155,7 +158,7 @@ nav input
 
       button[type="submit"]
         margin-top: 10px
-        width: 150px
+        width: 300px
         padding: 12px 20px
         font-size: 16px
         border: none
@@ -167,7 +170,7 @@ nav input
 
         &:hover
           background-color: #4db6fc
-
+      
   a#downloadLink
     display: inline-block
     margin-top: 20px
@@ -188,7 +191,41 @@ nav input
 @media screen and (max-width: 970px)
   form 
     max-width: 100%
+  .splide__slide 
+    width: 100%
+
+#image-carousel  
+    width: 80%
+    margin: 0 auto
+
+h1
+  margin: 100px auto 20px auto
+.splide__slide  
+    margin-top: 20px
+    list-style: none
+    display: inline-block
+    margin-right: 10px
 
 
+.splide__slide img  
+    max-width: 100%
+    height: 80%
 
-  
+
+.splide__arrow.splide__arrow--prev,
+.splide__arrow.splide__arrow--next  
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    background: rgba(255, 255, 255, 0.5)
+    border: none
+    border-radius: 50%
+    width: 40px
+    height: 40px
+    text-align: center
+    cursor: pointer
+
+
+.splide__arrow.splide__arrow--prev:hover,
+.splide__arrow.splide__arrow--next:hover  
+    background: rgba(255, 255, 255, 0.7)

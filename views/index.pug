@@ -1,24 +1,26 @@
 extends layout
 
 block content
-    h2 Conversor de Imágenes
+    h1 Conversor de Imágenes
 
-    form(action="#" method="post" enctype="multipart/form-data")
+    form(action="/convertir" method="post" enctype="multipart/form-data")
         .form-group
             label(for="imagen") Selecciona una imagen:
-            input(type="file" id="imagen" name="imagen" accept="image/png" required)
+            input(type="file"  id="imagen" name="imagen" accept="image/*" required)
             img(id="preview" style="max-width: 200px; max-height: 200px; margin-top: 10px; display: none;")
         .form-group
             label(for="formato") Formato de conversión:
             select(id="formato" name="formato" required)
                 option(value="") Seleccione el formato
-                option(value="jpg") JPG
+                option(value="jpeg") JPEG
                 option(value="png") PNG
+                option(value="webp") WebP
+                option(value="tiff") TIFF
                 option(value="gif") GIF
             // Agrega más opciones según los formatos que necesites
-            button(type="submit") Convertir
+            button(type="submit") Convertir y Descargar Imagen 
+                i(class="ri-download-cloud-2-line")
 
-        a#downloadLink(href="#" download) Descargar Imagen
 
     script.
         document.getElementById('imagen').onchange = function(e) {
@@ -32,4 +34,17 @@ block content
             };
             reader.readAsDataURL(input.files[0]);
         };
-
+        function clearFields() {
+            document.getElementById('imagen').value = ''; // Limpiar campo de archivo
+            document.getElementById('formato').selectedIndex = 0; // Restablecer selección del formato
+           var preview = document.getElementById('preview');
+           preview.src = '';
+           preview.style.display = 'none';
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var downloadButton = document.querySelector('[type="submit"]');
+            downloadButton.addEventListener('click', function() {
+                setTimeout(clearFields, 1000); // Llama a clearFields después de 1 segundo (1000 milisegundos)
+            });
+        });
+      

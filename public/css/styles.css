@@ -132,21 +132,27 @@ nav input {
 .container h2 {
   margin-bottom: 20px;
 }
-.container form {
+.container h2 h5 {
+  width: 26%;
+  margin-left: 38%;
+  text-align: left;
+}
+.container form, .container section {
   display: inline-block;
   text-align: left;
   max-width: 400px;
   width: 100%;
 }
-.container form .form-group {
+.container form .form-group, .container section .form-group {
   margin-bottom: 20px;
 }
-.container form .form-group label {
+.container form .form-group label, .container section .form-group label {
   display: block;
   font-weight: bold;
 }
 .container form .form-group input[type=file],
-.container form .form-group select {
+.container form .form-group select, .container form .form-group .form-input, .container section .form-group input[type=file],
+.container section .form-group select, .container section .form-group .form-input {
   width: 100%;
   padding: 12px;
   font-size: 16px;
@@ -157,18 +163,19 @@ nav input {
   transition: border-color 0.3s;
 }
 .container form .form-group input[type=file]:focus,
-.container form .form-group select:focus {
+.container form .form-group select:focus, .container form .form-group .form-input:focus, .container section .form-group input[type=file]:focus,
+.container section .form-group select:focus, .container section .form-group .form-input:focus {
   border-color: #3c8dbc;
   outline: none;
 }
-.container form .form-group select {
+.container form .form-group select, .container section .form-group select {
   appearance: none;
   background: #fff;
   cursor: pointer;
 }
-.container form .form-group button[type=submit] {
+.container form .form-group button[type=submit], .container section .form-group button[type=submit] {
   margin-top: 10px;
-  width: 150px;
+  width: 300px;
   padding: 12px 20px;
   font-size: 16px;
   border: none;
@@ -178,7 +185,7 @@ nav input {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.container form .form-group button[type=submit]:hover {
+.container form .form-group button[type=submit]:hover, .container section .form-group button[type=submit]:hover {
   background-color: #4db6fc;
 }
 .container a#downloadLink {
@@ -202,6 +209,48 @@ nav input {
   form {
     max-width: 100%;
   }
+  .splide__slide {
+    width: 100%;
+  }
+}
+#image-carousel {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 100px auto 20px auto;
+}
+
+.splide__slide {
+  margin-top: 20px;
+  list-style: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.splide__slide img {
+  max-width: 100%;
+  height: 80%;
+}
+
+.splide__arrow.splide__arrow--prev,
+.splide__arrow.splide__arrow--next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.splide__arrow.splide__arrow--prev:hover,
+.splide__arrow.splide__arrow--next:hover {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 /*# sourceMappingURL=styles.css.map */

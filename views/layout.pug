@@ -5,21 +5,31 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
         link(rel='stylesheet', href='/css/styles.css')
+        link(href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css", rel="stylesheet")
+
         link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200')
     body
         nav 
             .wrapper
                 .logo 
-                    a(href="#/") Metamorfomagus
+                    a(href="/") Metamorfomagus
                 input(type="radio", name="slider", id="menu-btn")
                 input(type="radio", name="slider", id="close-btn")
                 ul.nav-links 
                     label(for="close-btn" class="btn close-btn")
                         i(class='material-symbols-rounded') Close
                     li
-                        a(href="#") Inicio
-                    li 
-                        a(href="#") Iniciar Sesion
+                        
+                        a(href="/") INICIO
+                    if user === ''                   
+                        li 
+                            a(href="/login") Iniciar Sesion
+                    if user != ''
+                        li 
+                            a(href='/ver-imagenes') Ver Imagenes Convertidas
+                        li
+                            a(href='/logout') 
+                                i(class='material-symbols-rounded') logout
                 label(for="menu-btn" class="btn menu-btn")
                     i(class='material-symbols-rounded') Menu
         .container
